@@ -23,8 +23,8 @@
     override = pkg: pkg.overrideAttrs (finalAttrs: previousAttrs: { meta = previousAttrs.meta // { broken = true; }; });
   }
   {
-    condition = version: with versionComparison version;
-      lessThan "3.0.3";
+    condition = version:
+      true;
     override = pkg: pkg.override { openssl = openssl_1_1; };
   }
   {
